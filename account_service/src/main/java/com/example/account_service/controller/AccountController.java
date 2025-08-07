@@ -1,4 +1,4 @@
-﻿package com.example.account_service.controller;
+package com.example.account_service.controller;
 
 import com.example.account_service.dto.AccountDto;
 import com.example.account_service.service.AccountService;

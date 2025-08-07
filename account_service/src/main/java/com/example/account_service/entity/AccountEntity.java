@@ -1,31 +1,38 @@
-﻿package com.example.account_service.entity;
+package com.example.account_service.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
 
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "accounts")
+@Table(name = "account")
 public class AccountEntity {
-
     @Id
-    @Column(name = "idaccount", nullable = false, updatable = false)
-    private String idaccount;
+    @Column(name = "IDAccount", columnDefinition = "CHAR(36)")
+    private UUID IDAccount;
 
-    @Column(name = "username", nullable = false, unique = true)
-    private String username;
+    @Column(name = "UserName", nullable = false, unique = true, length = 50)
+    private String UserName;
 
-    private String firstName;
-    private String lastName;
+    @Column(name = "FirstName", length = 50)
+    private String FirstName;
+
+    @Column(name = "LastName", length = 50)
+    private String LastName;
+
+    @Column(name = "IDDepartment", columnDefinition = "CHAR(36)")
+    private UUID IDDepartment;
 
     @PrePersist
-    public void generateId() {
-        if (this.idaccount == null) {
-            this.idaccount = UUID.randomUUID().toString();
-        }
+    protected void onCreate() {
+        this.IDAccount = UUID.randomUUID();
     }
 }
