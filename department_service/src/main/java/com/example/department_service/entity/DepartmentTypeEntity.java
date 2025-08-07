@@ -20,14 +20,14 @@ public class DepartmentTypeEntity {
     @Column(name = "Name", nullable = false, unique = true, length = 100)
     private String Name;
 
-    @Column(name = "TotalMember")
+    @Column(name = "total_member")
     private Integer TotalMember;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Type", nullable = false)
     private DepartmentType Type;
 
-    @Column(name = "CreatedAt")
+    @Column(name = "created_at")
     private LocalDateTime CreatedAt;
 
     @PrePersist

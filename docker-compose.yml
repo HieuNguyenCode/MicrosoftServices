@@ -1,4 +1,4 @@
-﻿services:
+services:
   mariadb:
     container_name: mariadb
     build:
@@ -27,8 +27,8 @@
     ports:
       - "8081:8081"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mariadb://localhost:44561/microservice?createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimeZone=UTC
-      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/microservice?createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimeZone=UTC
+      SPRING_DATASOURCE_USERNAME: hieudev
       SPRING_DATASOURCE_PASSWORD: password124
       SPRING_APPLICATION_NAME: account_service
     networks:
@@ -45,8 +45,8 @@
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mariadb://localhost:44561/microservice?createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimeZone=UTC
-      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/microservice?createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimeZone=UTC
+      SPRING_DATASOURCE_USERNAME: hieudev
       SPRING_DATASOURCE_PASSWORD: password124
       SPRING_APPLICATION_NAME: department_service
     networks:

@@ -8,9 +8,9 @@ CREATE TABLE department
 (
     IDDepartment CHAR(36) PRIMARY KEY DEFAULT (uuid()),
     `Name`       VARCHAR(100)                            NOT NULL UNIQUE,
-    TotalMember  INT UNSIGNED,
+    total_member  INT UNSIGNED,
     Type         ENUM ('DEV','TEST','SCRUM_MASTER','PM') NOT NULL,
-    CreatedAt    DATETIME             DEFAULT NOW()
+    created_at    DATETIME             DEFAULT (NOW())
 );
 
 -- Bảng account
@@ -18,9 +18,9 @@ DROP TABLE IF EXISTS account;
 CREATE TABLE account
 (
     IDAccount    CHAR(36) PRIMARY KEY DEFAULT (uuid()),
-    UserName     VARCHAR(50) NOT NULL UNIQUE,
-    FirstName    VARCHAR(50),
-    LastName     VARCHAR(50),
+    user_name     VARCHAR(50) NOT NULL UNIQUE,
+    first_name    VARCHAR(50),
+    last_name     VARCHAR(50),
     IDDepartment CHAR(36)    NOT NULL,
     FOREIGN KEY (IDDepartment) REFERENCES department (IDDepartment)
 );
@@ -68,7 +68,7 @@ CREATE TABLE userroles
     CONSTRAINT FOREIGN KEY (IDUser) REFERENCES `user` (IDUser)
 );
 
-INSERT INTO department(`Name`, TotalMember, Type, CreatedAt)
+INSERT INTO department(`Name`, total_member, Type, created_at)
 VALUES ('Marketing', 1, 'DEV', '2020-03-05'),
        ('Sale', 2, 'TEST', '2020-03-05'),
        ('Bảo vệ', 3, 'SCRUM_MASTER', '2020-03-07'),
@@ -80,7 +80,7 @@ VALUES ('Marketing', 1, 'DEV', '2020-03-05'),
        ('Thư kí', 9, 'PM', '2020-04-07'),
        ('Bán hàng', 10, 'DEV', '2020-04-09');
 
-INSERT INTO account(UserName, IDDepartment)
+INSERT INTO account(user_name, IDDepartment)
 VALUES ('dangblack', (SELECT IDDepartment FROM department WHERE `Name` = 'Kỹ thuật')),
        ('quanganh', (SELECT IDDepartment FROM department WHERE `Name` = 'Marketing')),
        ('vanchien', (SELECT IDDepartment FROM department WHERE `Name` = 'Marketing')),

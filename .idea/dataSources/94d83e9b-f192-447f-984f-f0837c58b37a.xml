@@ -1545,7 +1545,7 @@
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Current>1</Current>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-08-07.17:03:06</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-08-07.20:54:45</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </schema>
     <schema id="559" parent="1" name="microsoft_services">
@@ -1615,16 +1615,16 @@
       <Position>1</Position>
       <StoredType>char(36)|0s</StoredType>
     </column>
-    <column id="577" parent="570" name="UserName">
+    <column id="577" parent="570" name="user_name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="578" parent="570" name="FirstName">
+    <column id="578" parent="570" name="first_name">
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="579" parent="570" name="LastName">
+    <column id="579" parent="570" name="last_name">
       <Position>4</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
@@ -1643,8 +1643,8 @@
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="583" parent="570" name="UserName">
-      <ColNames>UserName</ColNames>
+    <index id="583" parent="570" name="user_name">
+      <ColNames>user_name</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
@@ -1657,8 +1657,8 @@
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="586" parent="570" name="UserName">
-      <UnderlyingIndexName>UserName</UnderlyingIndexName>
+    <key id="586" parent="570" name="user_name">
+      <UnderlyingIndexName>user_name</UnderlyingIndexName>
     </key>
     <column id="587" parent="571" name="IDDepartment">
       <DefaultExpression>uuid()</DefaultExpression>
@@ -1671,7 +1671,7 @@
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="589" parent="571" name="TotalMember">
+    <column id="589" parent="571" name="total_member">
       <Position>3</Position>
       <StoredType>int(10) unsigned|0s</StoredType>
     </column>
@@ -1680,7 +1680,7 @@
       <Position>4</Position>
       <StoredType>enum(&apos;DEV&apos;, &apos;TEST&apos;, &apos;SCRUM_MASTER&apos;, &apos;PM&apos;)|0e</StoredType>
     </column>
-    <column id="591" parent="571" name="CreatedAt">
+    <column id="591" parent="571" name="created_at">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <Position>5</Position>
       <StoredType>datetime|0s</StoredType>

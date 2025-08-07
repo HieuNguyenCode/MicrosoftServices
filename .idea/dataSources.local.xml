@@ -11,15 +11,12 @@
       <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" qname="@" />
+          <node kind="schema">
+            <name qname="microservice" />
+            <name qname="@" />
+          </node>
         </introspection-scope>
       </schema-mapping>
-      <load-sources>user_and_system_sources</load-sources>
-    </data-source>
-    <data-source name="microservices@localhost" uuid="50838006-0f96-4a24-b333-e4cd4963d3c2">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" />
-      <user-name>root</user-name>
-      <schema-mapping />
       <load-sources>user_and_system_sources</load-sources>
     </data-source>
   </component>

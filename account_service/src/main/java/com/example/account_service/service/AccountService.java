@@ -18,11 +18,11 @@ public class AccountService implements IAccount {
     public List<AccountDto> getAccounts() {
         List<AccountEntity> accountEntities = accountRepository.findAll();
         return accountEntities.stream()
-                .map(account -> new AccountDto(
-                        account.getIDAccount(),
-                        account.getUserName(),
-                        account.getFirstName(),
-                        account.getLastName()))
-                .toList();
+                .map(accountEntity -> new AccountDto(
+                        accountEntity.getIDAccount(),
+                        accountEntity.getUserName(),
+                        accountEntity.getFirstName(),
+                        accountEntity.getLastName()
+                )).toList();
     }
 }

@@ -15,7 +15,7 @@
           <value>
             <PendingDiffInfo>
               <option name="filePath" value="$PROJECT_DIR$/account_service/service/AccountService.java" />
-              <option name="updatedContent" value="package com.example.account_service.service;&#10;&#10;// ...existing code...&#10;// import com.example.account_service.interfaces.IAccount;&#10;import com.example.account_service.dto.AccountDto;&#10;import com.example.account_service.entity.AccountEntity;&#10;// import com.example.account_service.repository.AccountRepository;&#10;import lombok.RequiredArgsConstructor;&#10;import org.springframework.stereotype.Service;&#10;&#10;import java.util.List;&#10;&#10;@Service&#10;@RequiredArgsConstructor&#10;// public class AccountService implements IAccount {&#10;public class AccountService {&#10;    // private final AccountRepository accountRepository;&#10;&#10;    // Dummy implementation for compilation if AccountRepository is missing&#10;    public List&lt;AccountDto&gt; getAccounts() {&#10;        // List&lt;AccountEntity&gt; accountEntities = accountRepository.findAll();&#10;        // return accountEntities.stream()&#10;        //         .map(account -&gt; new AccountDto(&#10;        //                 account.getIDAccount(),&#10;        //                 account.getUserName(),&#10;        //                 account.getFirstName(),&#10;        //                 account.getLastName()))&#10;        //         .toList();&#10;        throw new UnsupportedOperationException(&quot;AccountRepository not implemented&quot;);&#10;    }&#10;}&#10;" />
+              <option name="updatedContent" value="package com.example.account_service.service;&#10;&#10;import com.example.account_service.dto.AccountDto;&#10;// import com.example.account_service.entity.AccountEntity;&#10;// import com.example.account_service.interfaces.IAccount;&#10;// import com.example.account_service.repository.AccountRepository;&#10;import lombok.RequiredArgsConstructor;&#10;import org.springframework.stereotype.Service;&#10;&#10;import java.util.List;&#10;&#10;@Service&#10;@RequiredArgsConstructor&#10;// public class AccountService implements IAccount {&#10;public class AccountService {&#10;&#10;    // private final AccountRepository accountRepository;&#10;&#10;    public List&lt;AccountDto&gt; getAccounts() {&#10;        // Stub implementation to allow compilation&#10;        throw new UnsupportedOperationException(&quot;AccountRepository not implemented&quot;);&#10;    }&#10;}&#10;" />
             </PendingDiffInfo>
           </value>
         </entry>
@@ -33,6 +33,15 @@
             <PendingDiffInfo>
               <option name="filePath" value="$PROJECT_DIR$/department_service/service/DepartmentService.java" />
               <option name="updatedContent" value="// ...existing code...&#10;    @Override&#10;    public List&lt;DepartmentDto&gt; getAllDepartments() {&#10;        List&lt;DepartmentTypeEntity&gt; departmentEntities = departmentRepository.findAll();&#10;        return departmentEntities.stream()&#10;                .map(department -&gt; new DepartmentDto(&#10;                        department.getName(),&#10;                        department, // Pass the entity itself&#10;                        department.getCreatedAt()))&#10;                .toList();&#10;    }&#10;// ...existing code...&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/mariadb/Dockerfile">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/mariadb/Dockerfile" />
+              <option name="originalContent" value="FROM mariadb:11.7&#10;&#10;ARG MARIADB_DATABASE&#10;ARG MARIADB_USER&#10;ARG MARIADB_PASSWORD&#10;ARG MARIADB_ROOT_PASSWORD&#10;ARG MARIADB_PORT&#10;&#10;ENV MARIADB_DATABASE=$MARIADB_DATABASE&#10;ENV MARIADB_USER=$MARIADB_USER&#10;ENV MARIADB_PASSWORD=$MARIADB_PASSWORD&#10;ENV MARIADB_ROOT_PASSWORD=$MARIADB_ROOT_PASSWORD&#10;ENV MARIADB_PORT=$MARIADB_PORT&#10;&#10;COPY ./init.sql /docker-entrypoint-initdb.d/&#10;&#10;EXPOSE 44561" />
+              <option name="updatedContent" value="FROM mariadb:11.7&#10;&#10;ARG MARIADB_DATABASE&#10;ARG MARIADB_USER&#10;ARG MARIADB_PASSWORD&#10;ARG MARIADB_ROOT_PASSWORD&#10;ARG MARIADB_PORT&#10;&#10;ENV MARIADB_DATABASE=$MARIADB_DATABASE&#10;ENV MARIADB_USER=$MARIADB_USER&#10;ENV MARIADB_PASSWORD=$MARIADB_PASSWORD&#10;ENV MARIADB_ROOT_PASSWORD=$MARIADB_ROOT_PASSWORD&#10;ENV MARIADB_PORT=$MARIADB_PORT&#10;&#10;COPY ./inti.sql /docker-entrypoint-initdb.d/&#10;&#10;EXPOSE 44561" />
             </PendingDiffInfo>
           </value>
         </entry>

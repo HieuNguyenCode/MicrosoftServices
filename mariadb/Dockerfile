@@ -1,4 +1,4 @@
-﻿FROM mariadb:11.7
+﻿FROM mariadb:11.8.2
 
 ARG MARIADB_DATABASE
 ARG MARIADB_USER
@@ -14,4 +14,4 @@ ENV MARIADB_PORT=$MARIADB_PORT
 
 COPY ./init.sql /docker-entrypoint-initdb.d/
 
-EXPOSE 44561
+EXPOSE 3306
