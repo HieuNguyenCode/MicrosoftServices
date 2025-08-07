@@ -1,0 +1,37 @@
+﻿services:
+  mariadb:
+    container_name: mariadb
+    build:
+      context: ./mariadb
+      args:
+        - MARIADB_DATABASE=${MARIADB_DATABASE}
+        - MARIADB_USER=${MARIADB_USER}
+        - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+        - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+    ports:
+      - "${MARIADB_PORT}:3306"
+    volumes:
+      - ./mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mariadb/mysql-data:/var/lib/mariadb
+    networks:
+      - spring-microservice
+
+
+  account_service:
+    container_name: account_service
+    build:
+      context: ./account_service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://localhost:44561/microservice?createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimeZone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password124
+      SPRING_APPLICATION_NAME: account_service
+    networks:
+      - spring-microservice
+
+networks:
+  spring-microservice:
+    driver: bridge

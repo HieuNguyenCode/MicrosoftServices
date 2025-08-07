@@ -4,21 +4,28 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Setter
 @Getter
 @Entity
 @Table(name = "accounts")
 public class AccountEntity {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @Column(name = "idaccount", nullable = false, updatable = false)
+    private String idaccount;
 
     @Column(name = "username", nullable = false, unique = true)
     private String username;
 
-    @Column(name = "firstname", nullable = false)
     private String firstName;
-
-    @Column(name = "lastname", nullable = false)
     private String lastName;
+
+    @PrePersist
+    public void generateId() {
+        if (this.idaccount == null) {
+            this.idaccount = UUID.randomUUID().toString();
+        }
+    }
 }

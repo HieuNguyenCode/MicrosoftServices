@@ -4,7 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17449f8b-0561-4f76-98eb-8593bace7cc3" name="Changes" comment="" />
+    <list default="true" id="81475aa1-ece1-460c-ba13-0b147bc1f476" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitgnore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/MicrosoftServices.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/controller/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/dto/AccountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/interfaces/IAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mariadb/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mariadb/inti.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/.idea.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/entity/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/entity/AccountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/repository/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lombok-1.18.34-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lombok-1.18.34-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lombok-1.18.34.jar" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,55 +47,78 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="com.intellij.jpb.NewInterface" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="workOffline" value="true" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="30xgqSfNZSyG8WptvzwPWUyaxKH" />
+  <component name="ProjectId" id="30xrEkFyZoomYOBzVWUKOWuuJHR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AccountServiceApplication.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
+    "Docker.docker-compose.yml.account_service: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.mariadb: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "true",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AccountServiceApplication.executor": "Run",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Admin/IdeaProjects/MicrosoftServices",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "build.tools",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PLAIN_TEXT"
+    "DatabaseDriversLRU": [
+      "mariadb"
     ]
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.account_service.repository" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\MicrosoftServices\account_service" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -73,15 +130,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="17449f8b-0561-4f76-98eb-8593bace7cc3" name="Changes" comment="" />
-      <created>1754574829540</created>
+      <changelist id="81475aa1-ece1-460c-ba13-0b147bc1f476" name="Changes" comment="" />
+      <created>1754579957530</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1754574829540</updated>
-      <workItem from="1754574829541" duration="3363000" />
-      <workItem from="1754579567999" duration="25000" />
-      <workItem from="1754579598319" duration="62000" />
-      <workItem from="1754579677799" duration="75000" />
+      <updated>1754579957530</updated>
+      <workItem from="1754579959075" duration="3028000" />
+      <workItem from="1754586096989" duration="576000" />
+      <workItem from="1754586690869" duration="999000" />
     </task>
     <servers />
   </component>
