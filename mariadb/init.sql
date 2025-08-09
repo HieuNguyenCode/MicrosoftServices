@@ -6,10 +6,10 @@ USE microservice;
 DROP TABLE IF EXISTS department;
 CREATE TABLE department
 (
-    IDDepartment CHAR(36) PRIMARY KEY DEFAULT (uuid()),
-    `Name`       VARCHAR(100)                            NOT NULL UNIQUE,
+    IdDepartment CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    `name`       VARCHAR(100)                            NOT NULL UNIQUE,
     total_member  INT UNSIGNED,
-    Type         ENUM ('DEV','TEST','SCRUM_MASTER','PM') NOT NULL,
+    type         ENUM ('DEV','TEST','SCRUM_MASTER','PM') NOT NULL,
     created_at    DATETIME             DEFAULT (NOW())
 );
 
@@ -17,58 +17,56 @@ CREATE TABLE department
 DROP TABLE IF EXISTS account;
 CREATE TABLE account
 (
-    IDAccount    CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    IdAccount    CHAR(36) PRIMARY KEY DEFAULT (uuid()),
     user_name     VARCHAR(50) NOT NULL UNIQUE,
     first_name    VARCHAR(50),
     last_name     VARCHAR(50),
-    IDDepartment CHAR(36)    NOT NULL,
-    FOREIGN KEY (IDDepartment) REFERENCES department (IDDepartment)
+    IdDepartment CHAR(36)    NOT NULL,
+    FOREIGN KEY (IdDepartment) REFERENCES department (IdDepartment)
 );
 
 -- Bảng user
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`
 (
-    IDUser       CHAR(36) PRIMARY KEY DEFAULT (uuid()),
-    Email        VARCHAR(100) NOT NULL UNIQUE,
-    `Password`   VARCHAR(120) NOT NULL,
-    UserName     VARCHAR(50)  NOT NULL UNIQUE,
-    FirstName    VARCHAR(50),
-    LastName     VARCHAR(50),
-    AccessToken  VARCHAR(255),
-    RefreshToken VARCHAR(255)
+    IdUser       CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    email        VARCHAR(100) NOT NULL UNIQUE,
+    `password`   VARCHAR(120) NOT NULL,
+    user_name     VARCHAR(50)  NOT NULL UNIQUE,
+    first_name    VARCHAR(50),
+    last_name     VARCHAR(50)
 );
 
 -- Bảng refreshtoken
 DROP TABLE IF EXISTS refreshtoken;
 CREATE TABLE refreshtoken
 (
-    IDRefreshToken CHAR(36) PRIMARY KEY DEFAULT (uuid()),
-    ExpiryDate     DATETIME(6)  NOT NULL,
-    Token          VARCHAR(255) NOT NULL UNIQUE,
-    IDUser         CHAR(36),
-    FOREIGN KEY (IDUser) REFERENCES `user` (IDUser)
+    IdRefreshToken CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    expiry_date     DATETIME(6)  NOT NULL,
+    token          VARCHAR(255) NOT NULL UNIQUE,
+    IdUser         CHAR(36),
+    FOREIGN KEY (IdUser) REFERENCES `user` (IdUser)
 );
 
 DROP TABLE IF EXISTS role;
 CREATE TABLE role
 (
-    IDRole CHAR(36) PRIMARY KEY DEFAULT (uuid()),
-    `Name` ENUM ('ROLE_ADMIN', 'ROLE_MODERATOR', 'ROLE_USER') NOT NULL
+    IdRole CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    `name` ENUM ('ROLE_ADMIN', 'ROLE_MODERATOR', 'ROLE_USER') NOT NULL
 );
 
 
 DROP TABLE IF EXISTS userroles;
 CREATE TABLE userroles
 (
-    IDUser CHAR(36) NOT NULL,
-    IDRole CHAR(36) NOT NULL,
+    IdUser CHAR(36) NOT NULL,
+    IdRole CHAR(36) NOT NULL,
     PRIMARY KEY (IDUser, IDRole),
     CONSTRAINT FOREIGN KEY (IDRole) REFERENCES role (IDRole),
     CONSTRAINT FOREIGN KEY (IDUser) REFERENCES `user` (IDUser)
 );
 
-INSERT INTO department(`Name`, total_member, Type, created_at)
+INSERT INTO department(`Name`, total_member, type, created_at)
 VALUES ('Marketing', 1, 'DEV', '2020-03-05'),
        ('Sale', 2, 'TEST', '2020-03-05'),
        ('Bảo vệ', 3, 'SCRUM_MASTER', '2020-03-07'),
@@ -80,7 +78,7 @@ VALUES ('Marketing', 1, 'DEV', '2020-03-05'),
        ('Thư kí', 9, 'PM', '2020-04-07'),
        ('Bán hàng', 10, 'DEV', '2020-04-09');
 
-INSERT INTO account(user_name, IDDepartment)
+INSERT INTO account(user_name, IdDepartment)
 VALUES ('dangblack', (SELECT IDDepartment FROM department WHERE `Name` = 'Kỹ thuật')),
        ('quanganh', (SELECT IDDepartment FROM department WHERE `Name` = 'Marketing')),
        ('vanchien', (SELECT IDDepartment FROM department WHERE `Name` = 'Marketing')),

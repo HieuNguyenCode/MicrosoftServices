@@ -4,28 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81475aa1-ece1-460c-ba13-0b147bc1f476" name="Changes" comment="ok">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="81475aa1-ece1-460c-ba13-0b147bc1f476" name="Changes" comment="cong buoi 1">
+      <change afterPath="$PROJECT_DIR$/auth_service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/config/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/config/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/controller/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/dto/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/interfaces/IUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/94d83e9b-f192-447f-984f-f0837c58b37a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/94d83e9b-f192-447f-984f-f0837c58b37a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/entity/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/entity/AccountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/repository/AccountRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/controller/DepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/AuthServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/AuthServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/entity/DepartmentTypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/entity/DepartmentTypeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/repository/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/repository/DepartmentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mariadb/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/mariadb/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mariadb/inti.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mariadb/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mariadb/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mariadb/init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +40,29 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Dockerfile" />
         <option value="com.intellij.jpb.NewInterface" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "HieuNguyenCode"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/HieuNguyenCode/MicrosoftServices.git",
+    "accountId": "264ba668-4b84-4b75-8294-e95a7ceb2e1b"
+  }
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -77,6 +94,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AccountServiceApplication.executor": "Run",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
     "Spring Boot.DepartmentServiceApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -88,7 +106,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -102,7 +121,17 @@
       <recent name="C:\Users\Admin\IdeaProjects\MicrosoftServices\account_service" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.init.sql">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AuthServiceApplication">
     <configuration name="init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/mariadb/init.sql" />
       <script-mode>FILE</script-mode>
@@ -111,6 +140,13 @@
     <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="account_service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.account_service.AccountServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="auth_service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.auth_service.AuthServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,7 +165,9 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -174,7 +212,9 @@
       <workItem from="1754579959075" duration="3028000" />
       <workItem from="1754586096989" duration="576000" />
       <workItem from="1754586690869" duration="5602000" />
-      <workItem from="1754592328634" duration="9219000" />
+      <workItem from="1754592328634" duration="10244000" />
+      <workItem from="1754602652602" duration="7163000" />
+      <workItem from="1754745251684" duration="4854000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <option name="closed" value="true" />
@@ -200,15 +240,35 @@
       <option name="project" value="LOCAL" />
       <updated>1754593445340</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="cong buoi 1">
+      <option name="closed" value="true" />
+      <created>1754601774322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1754601774322</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok" />
+    <MESSAGE value="cong buoi 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="cong buoi 1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

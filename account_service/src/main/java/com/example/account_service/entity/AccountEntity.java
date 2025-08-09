@@ -12,8 +12,8 @@ import java.util.UUID;
 @Table(name = "account")
 public class AccountEntity {
     @Id
-    @Column(name = "IDAccount", columnDefinition = "CHAR(36)")
-    private UUID IDAccount;
+    @Column(name = "IdAccount", columnDefinition = "CHAR(36)")
+    private UUID IdAccount;
 
     @Column(name = "user_name", nullable = false, unique = true, length = 50)
     private String UserName;
@@ -24,11 +24,11 @@ public class AccountEntity {
     @Column(name = "last_name", length = 50)
     private String LastName;
 
-    @Column(name = "IDDepartment", columnDefinition = "CHAR(36)")
-    private UUID IDDepartment;
+    @Column(name = "IdDepartment", columnDefinition = "CHAR(36)")
+    private UUID IdDepartment;
 
     @PrePersist
     protected void onCreate() {
-        this.IDAccount = UUID.randomUUID();
+        this.IdAccount = UUID.randomUUID();
     }
 }
