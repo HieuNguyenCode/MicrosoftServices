@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.security.Key;
 import java.util.Date;
 import java.util.Map;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +25,7 @@ public class JwtService {
     private long expiration;
 
     public String generateAccessToken(Map<String, Object> userDetails, String username) {
-        return buildToken(Map.of(), username, expiration);
+        return buildToken(userDetails, username, expiration);
     }
 
     private String buildToken(Map<String, Object> claims, String userDetails, long expiration) {
@@ -55,7 +54,7 @@ public class JwtService {
             UserJwt userJwt = new UserJwt();
             userJwt.setUsername(claims.get("username", String.class));
             userJwt.setEmail(claims.get("email", String.class));
-            userJwt.setKey(UUID.fromString(claims.get("key", String.class)));
+            userJwt.setKey(claims.get("key", String.class));
             return userJwt;
         } catch (Exception e) {
             return null;
@@ -71,7 +70,7 @@ public class JwtService {
             UserJwt userJwt = new UserJwt();
             userJwt.setUsername(claims.get("username", String.class));
             userJwt.setEmail(claims.get("email", String.class));
-            userJwt.setKey(UUID.fromString(claims.get("key", String.class)));
+            userJwt.setKey(claims.get("key", String.class));
             return userJwt;
         } catch (Exception e) {
             return null;

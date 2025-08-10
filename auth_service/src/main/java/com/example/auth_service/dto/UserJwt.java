@@ -10,5 +10,5 @@ import java.util.UUID;
 public class UserJwt {
     private String username;
     private String email;
-    private UUID key;
+    private String key;
 }

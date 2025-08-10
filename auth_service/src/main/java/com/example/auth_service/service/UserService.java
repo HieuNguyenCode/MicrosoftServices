@@ -1,6 +1,7 @@
 package com.example.auth_service.service;
 
 import com.example.auth_service.dto.LoginRequest;
+import com.example.auth_service.dto.RefreshRequest;
 import com.example.auth_service.dto.RegisterRequest;
 import com.example.auth_service.entity.Refreshtoken;
 import com.example.auth_service.entity.User;
@@ -12,7 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -86,13 +86,13 @@ public class UserService implements IUser {
                     );
                 }
 
-                UUID keyAccessToken = UUID.randomUUID();
-                UUID keyRefreshToken = UUID.randomUUID();
+                String keyAccessToken = UUID.randomUUID().toString();
+                String keyRefreshToken = UUID.randomUUID().toString();
                 String accessToken = jwtService.generateAccessToken(
                         Map.of(
                                 "username", user.getUserName(),
                                 "email", user.getEmail(),
-                                "key", keyAccessToken.toString()
+                                "key", keyAccessToken
                         ),
                         user.getUserName()
                 );
@@ -106,8 +106,8 @@ public class UserService implements IUser {
                     );
                 }
                 Refreshtoken refreshTokenNew = new Refreshtoken();
-                refreshTokenNew.setKeyaccesstoken(keyAccessToken.toString());
-                refreshTokenNew.setKeyrefreshtoken(keyRefreshToken.toString());
+                refreshTokenNew.setKeyaccesstoken(keyAccessToken);
+                refreshTokenNew.setKeyrefreshtoken(keyRefreshToken);
                 refreshTokenNew.setIdUser(user);
                 refreshTokenNew.setExpiryDate(LocalDateTime.now().plusHours(1).toInstant(java.time.ZoneOffset.UTC));
                 refreshTokenRepository.save(refreshTokenNew);
@@ -128,6 +128,78 @@ public class UserService implements IUser {
                     Map.of(
                             "status", 500,
                             "message", "Đăng nhập thất bại"
+                    )
+            ));
+        }
+    }
+
+    @Override
+    @Async
+    public CompletableFuture<ResponseEntity<?>> Refresh(RefreshRequest request, String token) {
+        try {
+            return CompletableFuture.supplyAsync(() -> {
+                var claims = jwtService.parseTokenAllowExpired(token);
+                if (claims == null || claims.getKey() == null) {
+                    return ResponseEntity.badRequest().body(
+                            Map.of(
+                                    "status", HttpStatus.UNAUTHORIZED.value(),
+                                    "message", "Token không hợp lệ"
+                            )
+                    );
+                }
+
+                Refreshtoken refreshToken = refreshTokenRepository.findByKeyrefreshtokenOrKeyaccesstoken(request.getRefreshToken(), claims.getKey())
+                        .orElse(null);
+                if (refreshToken == null) {
+                    return ResponseEntity.badRequest().body(
+                            Map.of(
+                                    "status", HttpStatus.UNAUTHORIZED.value(),
+                                    "message", "Refresh token không hợp lệ"
+                            )
+                    );
+                }
+
+                String keyAccessToken = UUID.randomUUID().toString();
+                String keyRefreshToken = UUID.randomUUID().toString();
+                String accessToken = jwtService.generateAccessToken(
+                        Map.of(
+                                "username", claims.getUsername(),
+                                "email", claims.getEmail(),
+                                "key", keyAccessToken
+                        ),
+                        claims.getUsername()
+                );
+
+                if (accessToken == null || accessToken.isEmpty()) {
+                    return ResponseEntity.badRequest().body(
+                            Map.of(
+                                    "status", HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                                    "message", "Lỗi khi tạo access token"
+                            )
+                    );
+                }
+
+                refreshToken.setKeyrefreshtoken(keyRefreshToken);
+                refreshToken.setKeyaccesstoken(keyAccessToken);
+
+                refreshTokenRepository.save(refreshToken);
+
+                return ResponseEntity.ok().body(
+                        Map.of(
+                                "status", HttpStatus.OK.value(),
+                                "message", "Làm mới token thành công",
+                                "data", Map.of(
+                                        "accessToken", accessToken,
+                                        "refreshToken", keyRefreshToken
+                                )
+                        )
+                );
+            });
+        } catch (Exception e) {
+            return CompletableFuture.completedFuture(ResponseEntity.badRequest().body(
+                    Map.of(
+                            "status", 500,
+                            "message", "Làm mới token thất bại"
                     )
             ));
         }

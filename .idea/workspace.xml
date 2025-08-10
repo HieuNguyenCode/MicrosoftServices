@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81475aa1-ece1-460c-ba13-0b147bc1f476" name="Changes" comment="xong phần 2">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/94d83e9b-f192-447f-984f-f0837c58b37a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/94d83e9b-f192-447f-984f-f0837c58b37a.xml" afterDir="false" />
+    <list default="true" id="81475aa1-ece1-460c-ba13-0b147bc1f476" name="Changes" comment="xong login">
+      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/dto/RefreshRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/dto/UserJwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/dto/UserJwt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/interfaces/IUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/interfaces/IUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/RefreshTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/RefreshTokenRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +26,10 @@
         <option value="Enum" />
         <option value="Dockerfile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="com.intellij.jpb.NewInterface" />
         <option value="module-info" />
         <option value="com.intellij.jpb.JpaEntity" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -216,7 +218,7 @@
       <workItem from="1754592328634" duration="10244000" />
       <workItem from="1754602652602" duration="7163000" />
       <workItem from="1754745251684" duration="10597000" />
-      <workItem from="1754762596032" duration="27546000" />
+      <workItem from="1754762596032" duration="29657000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <option name="closed" value="true" />
@@ -274,7 +276,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754810542131</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="xong login">
+      <option name="closed" value="true" />
+      <created>1754811354995</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1754811354995</updated>
+    </task>
+    <task id="LOCAL-00009" summary="xong login">
+      <option name="closed" value="true" />
+      <created>1754811399897</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1754811399897</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +313,8 @@
     <MESSAGE value="ok" />
     <MESSAGE value="cong buoi 1" />
     <MESSAGE value="xong phần 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="xong phần 2" />
+    <MESSAGE value="xong login" />
+    <option name="LAST_COMMIT_MESSAGE" value="xong login" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
