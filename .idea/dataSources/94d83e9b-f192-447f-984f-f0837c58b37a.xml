@@ -1345,7 +1345,7 @@
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Current>1</Current>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-08-10.07:02:34</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-08-10.07:23:55</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </schema>
     <schema id="559" parent="1" name="mysql">
@@ -1547,7 +1547,7 @@
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="604" parent="571" name="refreshtoken_ibfk_1">
+    <index id="604" parent="571" name="Id_user">
       <ColNames>Id_user</ColNames>
       <Type>btree</Type>
     </index>

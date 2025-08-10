@@ -1,9 +1,6 @@
 package com.example.account_service.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
@@ -14,6 +11,7 @@ import org.hibernate.annotations.ColumnDefault;
 @Table(name = "account")
 public class Account {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @jakarta.validation.constraints.Size(max = 36)
     @ColumnDefault("uuid()")
     @Column(name = "Id_account", nullable = false, length = 36)

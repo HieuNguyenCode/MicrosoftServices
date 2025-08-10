@@ -13,6 +13,7 @@ import lombok.Setter;
 public class User {
     @Id
     @Size(max = 36)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @SequenceGenerator(name = "user_id_gen", sequenceName = ")")
     @Column(name = "Id_user", nullable = false, length = 36)
     private String idUser;

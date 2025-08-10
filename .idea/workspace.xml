@@ -5,45 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81475aa1-ece1-460c-ba13-0b147bc1f476" name="Changes" comment="xong phần 2">
-      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/diff-generator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/easycode/codebase-v2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/entity/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/dto/UserJwt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/entity/Refreshtoken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/RefreshTokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/service/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/Vx__fix_account_id_department.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/entity/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_all.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/94d83e9b-f192-447f-984f-f0837c58b37a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/94d83e9b-f192-447f-984f-f0837c58b37a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/dto/AccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/dto/AccountDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/entity/AccountEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/repository/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/java/com/example/account_service/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/entity/UserEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/interfaces/IUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/interfaces/IUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/account_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/RefreshTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/RefreshTokenRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/java/com/example/auth_service/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth_service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/dto/DepartmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/dto/DepartmentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/entity/DepartmentTypeEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/enums/DepartmentType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/repository/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/repository/DepartmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/java/com/example/department_service/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mariadb/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mariadb/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/department_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/department_service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +216,7 @@
       <workItem from="1754592328634" duration="10244000" />
       <workItem from="1754602652602" duration="7163000" />
       <workItem from="1754745251684" duration="10597000" />
-      <workItem from="1754762596032" duration="26888000" />
+      <workItem from="1754762596032" duration="27546000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <option name="closed" value="true" />
@@ -298,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754753735494</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="xong phần 2">
+      <option name="closed" value="true" />
+      <created>1754810542131</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1754810542131</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

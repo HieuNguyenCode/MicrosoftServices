@@ -16,6 +16,7 @@ import java.time.Instant;
 public class Refreshtoken {
     @Id
     @Size(max = 36)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @SequenceGenerator(name = "refreshtoken_id_gen", sequenceName = ")")
     @Column(name = "Id_refreshtoken", nullable = false, length = 36)
     private String idRefreshtoken;

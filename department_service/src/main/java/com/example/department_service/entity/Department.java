@@ -13,6 +13,7 @@ import java.time.Instant;
 @Table(name = "department")
 public class Department {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @jakarta.validation.constraints.Size(max = 36)
     @ColumnDefault("uuid()")
     @Column(name = "Id_department", nullable = false, length = 36)
