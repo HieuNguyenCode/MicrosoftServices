@@ -1,5 +1,6 @@
 package com.example.auth_service.controller;
 
+import com.example.auth_service.dto.LoginRequest;
 import com.example.auth_service.dto.RegisterRequest;
 import com.example.auth_service.service.UserService;
 import jakarta.validation.Valid;
@@ -19,8 +20,12 @@ public class    AuthenticationController {
     private  final UserService userService;
 
     @PostMapping("/register")
-    public CompletableFuture<ResponseEntity<?>> RegisterRequest(@RequestBody @Valid RegisterRequest request) {
-        System.out.println(">>> Register API called: " + request);
-        return userService.RegisterRequest(request);
+    public CompletableFuture<ResponseEntity<?>> Register(@RequestBody @Valid RegisterRequest request) {
+        return userService.Register(request);
+    }
+
+    @PostMapping("/login")
+    public CompletableFuture<ResponseEntity<?>> Login(@RequestBody @Valid LoginRequest request) {
+        return userService.Login(request);
     }
 }

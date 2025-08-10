@@ -10,7 +10,7 @@ import java.util.UUID;
 @Getter
 @AllArgsConstructor
 public class AccountDto {
-    private UUID IDAccount;
+    private String Id_account;
     private String UserName;
     private String FirstName;
     private String LastName;

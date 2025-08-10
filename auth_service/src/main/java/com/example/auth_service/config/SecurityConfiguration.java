@@ -10,7 +10,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfiguration {
     private static final String[] AUTH_WHITELIST = {
-            "/api/v1/auth/register" // endpoint bỏ qua bảo mật
+            "/api/v1/auth/register",
+            "/api/v1/auth/login"
     };
 
     @Bean

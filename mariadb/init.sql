@@ -6,7 +6,7 @@ USE microservice;
 DROP TABLE IF EXISTS department;
 CREATE TABLE department
 (
-    IdDepartment CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    Id_department CHAR(36) PRIMARY KEY DEFAULT (uuid()),
     `name`       VARCHAR(100)                            NOT NULL UNIQUE,
     total_member  INT UNSIGNED,
     type         ENUM ('DEV','TEST','SCRUM_MASTER','PM') NOT NULL,
@@ -17,19 +17,19 @@ CREATE TABLE department
 DROP TABLE IF EXISTS account;
 CREATE TABLE account
 (
-    IdAccount    CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    Id_account    CHAR(36) PRIMARY KEY DEFAULT (uuid()),
     user_name     VARCHAR(50) NOT NULL UNIQUE,
     first_name    VARCHAR(50),
     last_name     VARCHAR(50),
-    IdDepartment CHAR(36)    NOT NULL,
-    FOREIGN KEY (IdDepartment) REFERENCES department (IdDepartment)
+    Id_department CHAR(36)    NOT NULL,
+    FOREIGN KEY (Id_department) REFERENCES department (Id_department)
 );
 
 -- Bảng user
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`
 (
-    IdUser       CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    Id_user       CHAR(36) PRIMARY KEY DEFAULT (uuid()),
     email        VARCHAR(100) NOT NULL UNIQUE,
     `password`   VARCHAR(120) NOT NULL,
     user_name     VARCHAR(50)  NOT NULL UNIQUE,
@@ -41,17 +41,20 @@ CREATE TABLE `user`
 DROP TABLE IF EXISTS refreshtoken;
 CREATE TABLE refreshtoken
 (
-    IdRefreshToken CHAR(36) PRIMARY KEY DEFAULT (uuid()),
-    expiry_date     DATETIME(6)  NOT NULL,
-    token          VARCHAR(255) NOT NULL UNIQUE,
-    IdUser         CHAR(36),
-    FOREIGN KEY (IdUser) REFERENCES `user` (IdUser)
+    Id_refreshtoken CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    Keyaccesstoken CHAR(36) NOT NULL,
+    Keyrefreshtoken CHAR(36) NOT NULL,
+    Id_user         CHAR(36) NOT NULL,
+    expiry_date  DATETIME NOT NULL,
+    updated_at     DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
+    created_at     DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (Id_user) REFERENCES `user` (Id_user)
 );
 
 DROP TABLE IF EXISTS role;
 CREATE TABLE role
 (
-    IdRole CHAR(36) PRIMARY KEY DEFAULT (uuid()),
+    Id_role CHAR(36) PRIMARY KEY DEFAULT (uuid()),
     `name` ENUM ('ROLE_ADMIN', 'ROLE_MODERATOR', 'ROLE_USER') NOT NULL
 );
 
@@ -59,11 +62,11 @@ CREATE TABLE role
 DROP TABLE IF EXISTS userroles;
 CREATE TABLE userroles
 (
-    IdUser CHAR(36) NOT NULL,
-    IdRole CHAR(36) NOT NULL,
-    PRIMARY KEY (IDUser, IDRole),
-    CONSTRAINT FOREIGN KEY (IDRole) REFERENCES role (IDRole),
-    CONSTRAINT FOREIGN KEY (IDUser) REFERENCES `user` (IDUser)
+    Id_user CHAR(36) NOT NULL,
+    Id_role CHAR(36) NOT NULL,
+    PRIMARY KEY (Id_user, Id_role),
+    CONSTRAINT FOREIGN KEY (Id_role) REFERENCES role (Id_role),
+    CONSTRAINT FOREIGN KEY (Id_user) REFERENCES `user` (Id_user)
 );
 
 INSERT INTO department(`Name`, total_member, type, created_at)
@@ -78,16 +81,16 @@ VALUES ('Marketing', 1, 'DEV', '2020-03-05'),
        ('Thư kí', 9, 'PM', '2020-04-07'),
        ('Bán hàng', 10, 'DEV', '2020-04-09');
 
-INSERT INTO account(user_name, IdDepartment)
-VALUES ('dangblack', (SELECT IDDepartment FROM department WHERE `Name` = 'Kỹ thuật')),
-       ('quanganh', (SELECT IDDepartment FROM department WHERE `Name` = 'Marketing')),
-       ('vanchien', (SELECT IDDepartment FROM department WHERE `Name` = 'Marketing')),
-       ('cocoduongqua', (SELECT IDDepartment FROM department WHERE `Name` = 'Marketing')),
-       ('doccocaubai', (SELECT IDDepartment FROM department WHERE `Name` = 'Sale')),
-       ('khabanh', (SELECT IDDepartment FROM department WHERE `Name` = 'Sale')),
-       ('huanhoahong', (SELECT IDDepartment FROM department WHERE `Name` = 'Sale')),
-       ('tungnui', (SELECT IDDepartment FROM department WHERE `Name` = 'Thư kí')),
-       ('duongghuu', (SELECT IDDepartment FROM department WHERE `Name` = 'Bán hàng'));
+INSERT INTO account(user_name, account.Id_department)
+VALUES ('dangblack', (SELECT Id_department FROM department WHERE `Name` = 'Kỹ thuật')),
+       ('quanganh', (SELECT Id_department FROM department WHERE `Name` = 'Marketing')),
+       ('vanchien', (SELECT Id_department FROM department WHERE `Name` = 'Marketing')),
+       ('cocoduongqua', (SELECT Id_department FROM department WHERE `Name` = 'Marketing')),
+       ('doccocaubai', (SELECT Id_department FROM department WHERE `Name` = 'Sale')),
+       ('khabanh', (SELECT Id_department FROM department WHERE `Name` = 'Sale')),
+       ('huanhoahong', (SELECT Id_department FROM department WHERE `Name` = 'Sale')),
+       ('tungnui', (SELECT Id_department FROM department WHERE `Name` = 'Thư kí')),
+       ('duongghuu', (SELECT Id_department FROM department WHERE `Name` = 'Bán hàng'));
 
 INSERT INTO role(`Name`)
 VALUES ('ROLE_USER'),

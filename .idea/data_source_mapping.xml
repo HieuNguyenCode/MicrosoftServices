@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/94d83e9b-f192-447f-984f-f0837c58b37a/console.sql" value="94d83e9b-f192-447f-984f-f0837c58b37a" />
+    <file url="file://$PROJECT_DIR$/mariadb/init.sql" value="94d83e9b-f192-447f-984f-f0837c58b37a" />
+  </component>
+</project>

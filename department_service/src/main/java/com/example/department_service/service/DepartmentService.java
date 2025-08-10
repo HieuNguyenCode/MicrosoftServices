@@ -1,7 +1,7 @@
 package com.example.department_service.service;
 
 import com.example.department_service.dto.DepartmentDto;
-import com.example.department_service.entity.DepartmentTypeEntity;
+import com.example.department_service.entity.Department;
 import com.example.department_service.interfaces.IDepartment;
 import com.example.department_service.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ public class DepartmentService implements IDepartment {
 
     @Override
     public List<DepartmentDto> getAllDepartments() {
-        List<DepartmentTypeEntity> departmentEntities = departmentRepository.findAll();
+        List<Department> departmentEntities = departmentRepository.findAll();
         return departmentEntities.stream()
                 .map(department -> new DepartmentDto(
                         department.getName(),
