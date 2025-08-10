@@ -116,7 +116,7 @@ public class UserService implements IUser {
                         Map.of(
                                 "status", HttpStatus.OK.value(),
                                 "message", "Đăng nhập thành công",
-                                "date", Map.of(
+                                "data", Map.of(
                                         "accessToken", accessToken,
                                         "refreshToken", keyRefreshToken
                                 )
