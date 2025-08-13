@@ -16,55 +16,71 @@ services:
     networks:
       - spring-microservice
 
-  account_service:
-    container_name: account_service
+  eureka-server:
+    container_name: eureka-server
+    build:
+      context: ./eureka_server
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8761:8761"
+    networks:
+      - spring-microservice
+
+  account-service:
+    container_name: account-service
     build:
       context: ./account_service
       dockerfile: Dockerfile
     depends_on:
       - mariadb
+      - eureka-server
     ports:
       - "8081:8081"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/microservice?createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimeZone=UTC
       SPRING_DATASOURCE_USERNAME: hieudev
       SPRING_DATASOURCE_PASSWORD: password124
-      SPRING_APPLICATION_NAME: account_service
+      SPRING_APPLICATION_NAME: account-service
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
     networks:
       - spring-microservice
 
-  department_service:
-    container_name: department_service
+  department-service:
+    container_name: department-service
     build:
       context: ./department_service
       dockerfile: Dockerfile
     depends_on:
       - mariadb
+      - eureka-server
     ports:
       - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/microservice?createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimeZone=UTC
       SPRING_DATASOURCE_USERNAME: hieudev
       SPRING_DATASOURCE_PASSWORD: password124
-      SPRING_APPLICATION_NAME: department_service
+      SPRING_APPLICATION_NAME: department-service
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
     networks:
       - spring-microservice
 
-
-  auth_service:
-    container_name: auth_service
+  auth-service:
+    container_name: auth-service
     build:
       context: ./auth_service
       dockerfile: Dockerfile
     depends_on:
       - mariadb
+      - eureka-server
     ports:
       - "8082:8082"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/microservice?createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimeZone=UTC
       SPRING_DATASOURCE_USERNAME: hieudev
       SPRING_DATASOURCE_PASSWORD: password124
-      SPRING_APPLICATION_NAME: auth_service
+      SPRING_APPLICATION_NAME: auth-service
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
     networks:
       - spring-microservice
 

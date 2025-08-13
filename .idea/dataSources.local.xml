@@ -19,5 +19,20 @@
       </schema-mapping>
       <load-sources>user_and_system_sources</load-sources>
     </data-source>
+    <data-source name="microservice@mariadb" uuid="e684dab8-a762-4712-92af-a7fd6d20c9d5">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="microservice@mariadb" uuid="e6daa67d-4b1f-4baa-91fd-14d984abdfbf">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" />
+      <user-name>hieudev</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="microservice@mariadb" uuid="154f14a6-d044-402e-937d-de5916fde4de">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" />
+      <user-name>hieudev</user-name>
+      <schema-mapping />
+    </data-source>
   </component>
 </project>
