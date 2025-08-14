@@ -27,6 +27,20 @@ services:
     networks:
       - spring-microservice
 
+  api-gateway:
+    container_name: api-gateway
+    build:
+      context: ./api_gateway
+      dockerfile: Dockerfile
+    depends_on:
+      - eureka-server
+    ports:
+      - "8762:8762"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+    networks:
+      - spring-microservice
+
   account-service:
     container_name: account-service
     build:
