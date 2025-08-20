@@ -8,4 +8,5 @@ import java.util.UUID;
 
 public interface RefreshTokenRepository extends JpaRepository<Refreshtoken, String> {
     Optional<Refreshtoken> findByKeyrefreshtokenOrKeyaccesstoken(String keyRefreshToken, String keyAccessToken);
+    Optional<Refreshtoken> findByKeyaccesstoken(String keyAccessToken);
 }

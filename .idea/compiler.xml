@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka_server" />
       </profile>
-      <profile name="Annotation profile for api_gateway" enabled="true">
+      <profile name="Annotation profile for department_service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -17,8 +17,8 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="department_service" />
-        <module name="api_gateway" />
         <module name="auth_service" />
+        <module name="api_gateway" />
         <module name="account_service" />
       </profile>
     </annotationProcessing>

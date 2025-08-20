@@ -204,4 +204,49 @@ public class UserService implements IUser {
             ));
         }
     }
+
+    @Override
+    @Async
+    public CompletableFuture<ResponseEntity<?>> Verify(String authHeader) {
+        try {
+            var token = jwtService.parseToken(authHeader);
+            if (token == null || token.getKey() == null) {
+                return CompletableFuture.completedFuture(ResponseEntity.badRequest().body(
+                        Map.of(
+                                "status", HttpStatus.UNAUTHORIZED.value(),
+                                "message", "Token không hợp lệ"
+                        )
+                ));
+            }
+            return CompletableFuture.supplyAsync(() -> {
+                Refreshtoken refreshToken = refreshTokenRepository.findByKeyaccesstoken(token.getKey())
+                        .orElse(null);
+                if (refreshToken == null) {
+                    return ResponseEntity.badRequest().body(
+                            Map.of(
+                                    "status", HttpStatus.UNAUTHORIZED.value(),
+                                    "message", "Token không hợp lệ"
+                            )
+                    );
+                }
+                return ResponseEntity.ok().body(
+                        Map.of(
+                                "status", HttpStatus.OK.value(),
+                                "message", "Token hợp lệ",
+                                "data", Map.of(
+                                        "username", token.getUsername(),
+                                        "email", token.getEmail()
+                                )
+                        )
+                );
+            });
+        } catch (Exception e) {
+            return CompletableFuture.completedFuture(ResponseEntity.badRequest().body(
+                    Map.of(
+                            "status", 500,
+                            "message", "Xác thực token thất bại"
+                    )
+            ));
+        }
+    }
 }

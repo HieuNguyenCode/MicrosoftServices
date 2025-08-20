@@ -35,4 +35,13 @@ public class    AuthenticationController {
         }
         return userService.Refresh(request, token);
     }
+
+    @GetMapping("/verify")
+    public CompletableFuture<ResponseEntity<?>> Verify(@RequestHeader("Authorization") String authHeader) {
+        String token = null;
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            token = authHeader.substring(7);
+        }
+        return userService.Verify(token);
+    }
 }

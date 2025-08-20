@@ -12,4 +12,6 @@ public interface IUser {
     CompletableFuture<ResponseEntity<?>> Register(RegisterRequest request);
     CompletableFuture<ResponseEntity<?>> Login(LoginRequest request);
     CompletableFuture<ResponseEntity<?>> Refresh(RefreshRequest request, String token);
+
+    CompletableFuture<ResponseEntity<?>> Verify(String authHeader);
 }
