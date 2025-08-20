@@ -9,16 +9,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka_server" />
       </profile>
-      <profile name="Annotation profile for department_service" enabled="true">
+      <profile name="Annotation profile for admin_service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="admin_service" />
         <module name="department_service" />
         <module name="auth_service" />
         <module name="api_gateway" />
+        <module name="config_service" />
         <module name="account_service" />
       </profile>
     </annotationProcessing>
@@ -26,8 +29,10 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="account_service" options="-parameters" />
+      <module name="admin_service" options="-parameters" />
       <module name="api_gateway" options="-parameters" />
       <module name="auth_service" options="-parameters" />
+      <module name="config_service" options="-parameters" />
       <module name="department_service" options="-parameters" />
       <module name="eureka_server" options="-parameters" />
     </option>
